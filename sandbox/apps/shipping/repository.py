@@ -1,6 +1,6 @@
 from decimal import Decimal as D
 
-from oscar.apps.shipping.methods import Free, FixedPrice
+from oscar.apps.shipping.methods import FixedPrice, Free
 from oscar.apps.shipping.repository import Repository as CoreRepository
 
 

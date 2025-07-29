@@ -4,7 +4,8 @@ from django.utils.translation import gettext_lazy as _
 
 # Django settings for oscar project.
 PROJECT_DIR = os.path.dirname(__file__)
-location = lambda x: os.path.join(os.path.dirname(os.path.realpath(__file__)), x)
+location = lambda x: os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                                  x)
 
 DEBUG = True
 TEMPLATE_DEBUG = True
@@ -21,12 +22,14 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',     # Add 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': location('db.sqlite'),              # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3',
+        # Add 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': location('db.sqlite'),
+        # Or path to database file if using sqlite3.
+        'USER': '',  # Not used with sqlite3.
+        'PASSWORD': '',  # Not used with sqlite3.
+        'HOST': '',  # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',  # Set to empty string for default. Not used with sqlite3.
     }
 }
 ATOMIC_REQUESTS = True
@@ -206,7 +209,6 @@ LOGGING = {
     }
 }
 
-
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -275,7 +277,8 @@ LOGIN_REDIRECT_URL = '/accounts/'
 APPEND_SLASH = True
 
 # Oscar settings
-from oscar.defaults import *    # noqa
+from oscar.defaults import *  # noqa
+
 OSCAR_ALLOW_ANON_CHECKOUT = True
 
 OSCAR_SHOP_TAGLINE = 'PayPal'
@@ -300,7 +303,6 @@ OSCAR_DASHBOARD_NAVIGATION.append(
             },
         ]
     })
-
 
 # Haystack settings
 HAYSTACK_CONNECTIONS = {
